@@ -1,4 +1,4 @@
-package com.southwind.controller;
+package com.southwind;
 
 import com.southwind.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +8,14 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/consumer")
-public class ConsumerHandler {
+@RequestMapping("/rest")
+public class RestHandler {
     @Autowired
     private RestTemplate restTemplate;
+
     @GetMapping("/findAll")
     public Collection<Student> findAll(){
-        return restTemplate.getForEntity("http://localhost:8010/student/findAll",Collection.class).getBody();
+    return restTemplate.getForEntity("http://localhost:8010/student/findAll",Collection.class).getBody();
     }
 
     @GetMapping("/findAll2")
@@ -51,5 +52,4 @@ public class ConsumerHandler {
     public void update(@PathVariable("id") long id){
         restTemplate.put("http://localhost:8010/student/save",id);
     }
-
 }

@@ -1,4 +1,4 @@
-package com.southwind.controller;
+package com.southwind;
 
 import com.southwind.entity.Student;
 import com.southwind.feign.FeignProviderClient;

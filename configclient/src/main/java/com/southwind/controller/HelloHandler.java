@@ -6,17 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/native")
-public class NativeConfigHandler {
+@RequestMapping("/hello")
+public class HelloHandler {
     @Value("${server.port}")
     private String port;
 
-    @Value("${foo}")
-    private String foo;
-
     @GetMapping("/index")
-    public String index() {
-        return this.port + "-" + this.foo;
-
+    public String index(){
+        return this.port;
     }
 }
