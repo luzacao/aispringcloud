@@ -19,6 +19,11 @@
         <module>hystrix</module>
         <module>nativeconfigserver</module>
         <module>nativeconfigclient</module>
+<<<<<<< HEAD
+=======
+        <module>configserver</module>
+        <module>configclient</module>
+>>>>>>> Initial commit
 
     </modules>
 
